@@ -1,10 +1,10 @@
-var xp = 0;
-var health = 100;
-var gold = 50;
-var currentWeapon = 0;
-var fighting;
-var monsterHealth;
-var inventory = ["stick"];
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
 
 const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
@@ -65,4 +65,50 @@ function goCave() {
   button3.style.display = "block";
   text.style.display = "block";
   inventoryText.style.display = "none";
+}
+
+function buyHealth() {
+  if (gold >= 10) {
+    gold -= 10;
+    goldText.innerText = gold;
+    health += 10;
+    healthText.innerText = health;
+  } else {
+    text.innerText = "You do not have enough gold to buy health.";
+  }
+}
+
+function buyWeapon() {
+  if (gold >= 30) {
+    gold -= 30;
+    goldText.innerText = gold;
+    inventory.push("sword");
+    inventoryText.innerText = inventory;
+  } else {
+    text.innerText = "You do not have enough gold to buy a weapon.";
+  }
+}
+
+function goHome() {
+  text.innerText = "You head back to your house.";
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = "";
+  button1.style.display = "block";
+  button2.style.display = "block";
+  button3.style.display = "none";
+  text.style.display = "block";
+  inventoryText.style.display = "none";
+}
+
+function fightDragon() {
+  fighting = 1;
+  goCave();
+  monsterHealth = Math.floor(Math.random() * 20) + 80;
+  monsterStats.style.display = "block";
+  monsterNameText.innerText = "Dragon";
+  monsterHealthText.innerText = monsterHealth;
 }
