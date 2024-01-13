@@ -1,41 +1,57 @@
 body {
-  background-color: darkblue;
-}
-
-#text {
-  background-color: black;
-  color: white;
-  padding: 10px;
+  background-color: #0a0a0a;
+  font-family: "Cinzel", serif; /* or any medieval-style font */
+  color: #dcd0c0;
 }
 
 #game {
-  max-width: 500px;
-  max-height: 400px;
-  background-color: lightgray;
-  color: white;
-  margin: 0 auto;
-  padding: 10px;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border: 2px solid #4a2b0f;
+  box-shadow: 0 0 10px 3px #4a2b0f;
 }
 
-#controls {
-  border: 1px black solid;
-  padding: 5px;
+#text {
+  background-color: #2a2a2a;
+  color: #e4d6a7;
+  padding: 15px;
+  border: 1px dashed #4a2b0f;
+  margin-bottom: 20px;
 }
 
-#stats {
-  border: 1px black solid;
-  color: black;
-  padding: 5px;
-}
-
+#controls,
+#stats,
 #monsterStats {
-  display: none;
-  border: 1px black solid;
-  color: white;
-  padding: 5px;
-  background-color: red;
+  background-color: #262626;
+  border: 1px solid #4a2b0f;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+button {
+  background-color: #4a2b0f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Cinzel", serif;
+  box-shadow: 0 0 5px #2a2a2a;
+}
+
+button:hover {
+  background-color: #603913;
 }
 
 .stat {
-  padding-right: 10px;
+  padding-right: 15px;
+  font-size: 16px;
+}
+
+strong {
+  color: #f4e542;
 }

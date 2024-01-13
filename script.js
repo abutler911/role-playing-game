@@ -112,3 +112,61 @@ function fightDragon() {
   monsterNameText.innerText = "Dragon";
   monsterHealthText.innerText = monsterHealth;
 }
+
+function attack() {
+  text.innerText = "The Dragon attacks.";
+  health -= Math.floor(Math.random() * 5) + 1;
+  healthText.innerText = health;
+  if (health <= 0) {
+    lose();
+  }
+}
+
+function lose() {
+  text.innerText = "You lose.";
+  button1.innerText = "Restart";
+  button2.innerText = "";
+  button3.innerText = "";
+  button1.onclick = restart;
+  button2.onclick = "";
+  button3.onclick = "";
+  button1.style.display = "block";
+  button2.style.display = "none";
+  button3.style.display = "none";
+  text.style.display = "block";
+  inventoryText.style.display = "none";
+}
+
+function win() {
+  text.innerText = "You win!";
+  button1.innerText = "Restart";
+  button2.innerText = "";
+  button3.innerText = "";
+  button1.onclick = restart;
+  button2.onclick = "";
+  button3.onclick = "";
+  button1.style.display = "block";
+  button2.style.display = "none";
+  button3.style.display = "none";
+  text.style.display = "block";
+  inventoryText.style.display = "none";
+}
+
+function restart() {
+  location.reload();
+}
+
+function lose2() {
+  text.innerText = "You lose.";
+  button1.innerText = "Restart";
+  button2.innerText = "";
+  button3.innerText = "";
+  button1.onclick = restart;
+  button2.onclick = "";
+  button3.onclick = "";
+  button1.style.display = "block";
+  button2.style.display = "none";
+  button3.style.display = "none";
+  text.style.display = "block";
+  inventoryText.style.display = "none";
+}
